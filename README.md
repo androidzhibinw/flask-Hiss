@@ -15,5 +15,13 @@ learn more about it from [virtualenv](https://virtualenv.readthedocs.org)
     deactivate (deactive venv)
 
 refer [flask-virtualenv](http://flask.pocoo.org/docs/0.10/installation/#virtualenv)
-    
-###
+
+### active venv and install Flask
+
+    source venv/bin/activate 
+    pip install Flask 
+
+### install Flask-SQLAlChemy
+
+    source venv/bin/activate 
+    pip install Flask-SQLAlchemy
