@@ -2,7 +2,7 @@
 {% block body %}
 <ul class="list-group">
     {% for item in items %}
-    <a href="/"><li class="list-group-item">{{item.title}}</li></a>
+    <a href="/item/{{item.id}}"><li class="list-group-item">{{item.title}}</li></a>
     {% endfor %}
 </ul>
 {% endblock %}
