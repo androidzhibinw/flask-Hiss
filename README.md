@@ -77,3 +77,7 @@ it is easy to create your model
             self.title = title
             self.content=content
 
+where to create the table ? will create the models. refer [flask-sqlalchemy-api](http://flask-sqlalchemy.pocoo.org/2.1/api/)
+
+    db.create_all()
+

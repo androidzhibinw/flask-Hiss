@@ -17,3 +17,7 @@ def home():
 def item(id=None):
     item = Items.query.get(id)
     return render_template('item.html',item=item)
+
+@items_blueprint.route('/item/add')
+def item_add():
+    return render_template('add.html')
