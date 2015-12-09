@@ -2,7 +2,7 @@
 {% block body %}
 <form action="{{url_for(".item_add")}}" method="post">
     {{form.csrf_token}}
-    {{form.title}}
+    {{form.title.label}}{{form.title}}
     <input type="submit" value="Submit">
 </form>
 {% endblock %}

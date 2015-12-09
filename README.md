@@ -1,4 +1,4 @@
-## Prepare 
+## Simple flask application with CRUD
 ### use virtualenv 
 #### why use virtualenv ? 
 virtualenv is used to resolve  multiple Python projects using different versions of python or python libraries.
@@ -102,4 +102,8 @@ register blueprint in the main py file.
     def home():
         items = Items.query.all()
         return render_template('home.html',items=items)
+### use wtf 
+#### why use [wtforms](http://wtforms.readthedocs.org/)  and [flask-wtf](http://flask-wtf.readthedocs.org/)? 
+
+use wtfforms in flask make you handle form easily.
 
