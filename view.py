@@ -8,6 +8,7 @@ items_blueprint = Blueprint(
 
 
 from model import Items
+from form import ItemForm
 #view the list
 @items_blueprint.route('/')
 def home():
@@ -21,5 +22,9 @@ def item(id=None):
 #add 
 @items_blueprint.route('/item/add',methods=['GET','POST'])
 def item_add():
-    return render_template('add.html')
+    form = ItemForm(request.form)
+    if request.method == 'POST' and form.validate():
+        return redirect(url_for('.home'))
+    else:
+       return render_template('add.html', form=form)
 #delete
