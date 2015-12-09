@@ -81,3 +81,25 @@ where to create the table ? will create the models. refer [flask-sqlalchemy-api]
 
     db.create_all()
 
+### use Blueprint
+#### why use Blueprint? refer [flask-blueprint](http://flask.pocoo.org/docs/0.10/blueprints/)
+
+At first , you may write all your routes in the main py file , when it gets more and more, it's better to seperate them to different part.
+Use Blueprint can help seperate handle different part urls in different module/file.
+
+register blueprint in the main py file.
+
+    app.register_blueprint(items_blueprint)
+
+`items_blueprint` can handle related urls in its own module.
+
+    items_blueprint = Blueprint(
+            '/',__name__,
+            template_folder='templates'
+            )
+
+    @items_blueprint.route('/')
+    def home():
+        items = Items.query.all()
+        return render_template('home.html',items=items)
+
