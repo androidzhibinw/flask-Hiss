@@ -2,7 +2,24 @@
 {% block body %}
 <form action="{{url_for(".item_add")}}" method="post">
     {{form.csrf_token}}
-    {{form.title.label}}{{form.title}}
+
+    {{form.title}}
+
+    {{form.reproduce_steps.label}}
+    {{form.reproduce_steps}}
+
+    {{form.crs.label}}
+    {{form.crs}}
+
+    {{form.jira.label}}
+    {{form.jira}}
+
+    {{form.solution_desc.label}}
+    {{form.solution_desc}}
+
+    {{form.gerrits.label}}
+    {{form.gerrits}}
+
     <input type="submit" value="Submit">
 </form>
 {% endblock %}
