@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-<ul class="list-group">
+<ul class="col-sm-offset-1 col-sm-10">
     {% for item in items %}
     <a href="/item/{{item.id}}"><li class="list-group-item">{{item.title}}</li></a>
     {% endfor %}
