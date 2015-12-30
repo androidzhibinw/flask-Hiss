@@ -107,3 +107,28 @@ register blueprint in the main py file.
 
 use wtfforms in flask make you handle form easily.
 
+1.Create a form object.
+
+    from flask_wtf import Form
+    from wtforms import StringField
+    from wtforms.validators import DataRequired
+
+    class MyForm(Form):
+    name = StringField('name', validators=[DataRequired()])
+
+2.render form in template
+
+    <form method="POST" action="/">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name(size=20) }}
+        <input type="submit" value="Go">
+    </form>
+
+3.handle data in post method.
+
+    @app.route('/submit', methods=('GET', 'POST'))
+    def submit():
+        form = MyForm()
+        if form.validate_on_submit():
+            return redirect('/success')
+        return render_template('submit.html', form=form)

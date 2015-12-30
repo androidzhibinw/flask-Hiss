@@ -6,7 +6,7 @@ class ItemForm(Form):
     title = StringField('Title',validators=[DataRequired()])
     reproduce_steps = TextAreaField('Reproduce Steps',validators=[DataRequired()])
     crs = StringField('CRs')
-    jira = StringField('Jiras')
+    jiras = StringField('Jiras')
     log_analysis = TextAreaField('Log Analysis')
     solution_desc = TextAreaField('Solution')
     gerrits = StringField('Gerrits')

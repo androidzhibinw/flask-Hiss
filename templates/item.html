@@ -1,5 +1,37 @@
 {% extends "layout.html" %}
 {% block body %}
-<h2>{{item.id,item.title}}</h2>
+<div class="col-sm-offset-1 col-sm-10">
+{{item.title}}
+</div>
+
+<div class="col-sm-offset-1 col-sm-10">
+<h3>Reproduce steps:</h3>
+{{item.reproduce_steps}}
+</div>
+
+<div class="col-sm-offset-1 col-sm-10">
+<h3>CRs:</h3>
+{{item.crs}}
+</div>
+
+<div class="col-sm-offset-1 col-sm-10">
+<h3>Jiras:</h3>
+{{item.jiras}}
+</div>
+
+<div class="col-sm-offset-1 col-sm-10">
+<h3>Analysis:</h3>
+{{item.log_analysis}}
+</div>
+<div class="col-sm-offset-1 col-sm-10">
+<h3>Solution:</h3>
+{{item.solution_desc}}
+</div>
+
+<div class="col-sm-offset-1 col-sm-10">
+<h3>Gerrits:</h3>
+{{item.gerrits}}
+</div>
+
 
 {% endblock %}
