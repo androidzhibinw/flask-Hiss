@@ -38,3 +38,14 @@ def item_add():
     else:
        return render_template('add.html', form=form)
 #delete
+@items_blueprint.route('/item/<id>/delete',methods=['POST'])
+def item_del(id=None):
+    item = Items.query.filter_by(id=id)
+    #print item
+    try:
+        item.delete()
+        db.session.commit()
+        flash("item id="+id+" deleted!")
+    except Exception as e:
+        flash(e)
+    return redirect(url_for('.home'))

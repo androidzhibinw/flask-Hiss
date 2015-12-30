@@ -33,5 +33,16 @@
 {{item.gerrits}}
 </div>
 
+<form action="{{url_for(".item_del",id=item.id)}}" method="post" class="form-horizontal">
+<div class="form-group">
+    <div class="col-sm-offset-10 col-sm-2">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <button type="submit" class="btn btn-danger btn-lg">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+
+</form>
 
 {% endblock %}
