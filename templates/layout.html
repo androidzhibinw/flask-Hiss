@@ -3,5 +3,13 @@
     <h2 class="title">Hiss</h2>
      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
      <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+<div class="form-group">
+    <div class="col-sm-offset-10 col-sm-2">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <a href="/" class="btn btn-info " role="button"><span class="glyphicon glyphicon-home"><span></a>
+        <a href="{{url_for(".item_add")}}" class="btn btn-info " role="button"><span class="glyphicon glyphicon-plus"><span></a>
+    </div>
+</div>
+
     {% block body %}{% endblock %}
 </html>
