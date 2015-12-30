@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block body %}
+{% from "_formhelpers.html" import render_field %}
+<form action="{{url_for(".item_update",id=item.id)}}" method="post" class="form-horizontal">
+    {{form.csrf_token}}
+<div class="form-group">
+    {{form.title.label(class_="col-sm-1 control-label")}}
+    <div class="col-sm-10">
+    {{render_field(form.title,class="form-control")}}
+</div>
+</div>
+
+<div class="form-group">
+    {{form.reproduce_steps.label(class_="col-sm-1 control-label")}}
+    <div class="col-sm-10">
+    {{render_field(form.reproduce_steps,class="form-control",rows="6")}}
+</div>
+</div>
+<div class="form-group">
+    {{form.crs.label(class_="col-sm-1 control-label")}}
+    <div class="col-sm-5">
+    {{form.crs(class_="form-control")}}
+</div>
+</div>
+<div class="form-group">
+    {{form.jiras.label(class="col-sm-1 control-label")}}
+    <div class="col-sm-10">
+    {{form.jiras(class_="form-control")}}
+</div>
+</div>
+<div class="form-group">
+    {{form.log_analysis.label(class_="col-sm-1 control-label")}}
+    <div class="col-sm-10">
+    {{form.log_analysis(class_="form-control",rows="6")}}
+</div>
+</div>
+
+<div class="form-group">
+    {{form.solution_desc.label(class_="col-sm-1 control-label")}}
+    <div class="col-sm-10">
+    {{form.solution_desc(class_="form-control",rows="6")}}
+</div>
+</div>
+
+<div class="form-group">
+    {{form.gerrits.label(class_="col-sm-1 control-label")}}
+    <div class="col-sm-10">
+    {{form.gerrits(class_="form-control")}}
+</div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-1 col-sm-10">
+    <input type="submit" value="Submit" class="btn btn-primary">
+    </div>
+</div>
+</form>
+{% endblock %}
