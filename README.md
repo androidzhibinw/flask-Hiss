@@ -34,6 +34,7 @@ refer [flask-virtualenv](http://flask.pocoo.org/docs/0.10/installation/#virtuale
 input below code:
 
     from flask import Flask
+    app = Flask(__name__)
     @app.route('/')
     def index():
         return 'hello world'
