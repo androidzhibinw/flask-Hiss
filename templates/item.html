@@ -6,7 +6,7 @@
 
 <div class="col-sm-offset-1 col-sm-10">
 <h3>Reproduce steps:</h3>
-{{item.reproduce_steps}}
+{{item.reproduce_steps.replace('\n','<br>')|safe}}
 </div>
 
 <div class="col-sm-offset-1 col-sm-10">
@@ -21,7 +21,7 @@
 
 <div class="col-sm-offset-1 col-sm-10">
 <h3>Analysis:</h3>
-{{item.log_analysis}}
+{{item.log_analysis.replace('\n','<br>')|safe}}
 </div>
 <div class="col-sm-offset-1 col-sm-10">
 <h3>Solution:</h3>
